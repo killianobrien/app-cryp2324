@@ -32,10 +32,11 @@
 <p><strong>Task</strong></p>
 <ol type="1">
 <li><p>Complete the model code above, by replacing the <code>?</code>s, to obtain a working function <code>mygcd</code>. Test that it is working correctly on small arguments. Compare its output with <code>sp.gcd</code> for some large arguments.</p></li>
+<li><p>What other checks/cases should you use like the <code>if b==0</code> one, in order for your function to work with all valid inputs? How should your function treat any negative arguments?</p></li>
 <li><p>Write another version that does not rely on function recursion. You can do this with a suitable <code>while</code> loop for instance.</p></li>
 </ol>
 <h3 id="q2-implementing-the-extended-euclidean-algorithm">Q2 Implementing the extended Euclidean algorithm</h3>
-<p>Sympy has an implmentation of the Extended Euclidan algorithm <code>sp.gcdex</code></p>
+<p>Sympy has an implementation of the Extended Euclidean algorithm <code>sp.gcdex</code></p>
 <pre><code>sp.gcdex(a,b)</code></pre>
 <p>will return a 3-tuple (x,y,d) satisfying</p>
 <ul>
@@ -58,6 +59,7 @@
 <li>Replace the <code>?</code>s in the code above to obtain a working version of <code>mygcdex</code>. You’ll have to think very carefully about how to define <code>newx</code> and <code>newy</code>. Pen and paper may be needed to figure it out.</li>
 <li>Test it on some small arguments to ensure it’s working correctly.</li>
 <li>Test it on some large arguments and ensure it’s working correctly.</li>
+<li>Does the function work with (some or all) negative arguments? Adapt it so it does.</li>
 <li>Compare its output with <code>sp.gcdex</code>.</li>
 </ol>
 <h3 id="q3-investigating-multiplicative-inverses">Q3 Investigating multiplicative inverses</h3>
@@ -68,7 +70,7 @@
 <li>Write your own function <code>mymod_inverse</code> that uses the output of <code>mygcdex</code> or <code>sp.gcdex</code> to calculate multiplicative inverses.</li>
 <li>It should raise an error, or at least print some output, to indicate when the inverse does not exist.</li>
 <li>Like before, test it and compare its output with <code>sp.mod_inverse</code>.</li>
-<li>Use <code>mymod_inverse</code> to replicate the table of inverses modulo 8, shown on page 53 of Stallings.</li>
+<li>Use <code>mymod_inverse</code> to replicate the table of inverses modulo 8, shown on page 55 of Stallings.</li>
 </ol>
 <h3 id="q4-further-investigation-of-multiplicative-inverses">Q4 Further investigation of multiplicative inverses</h3>
 <ol type="1">

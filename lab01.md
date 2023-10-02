@@ -52,11 +52,13 @@ Note the check to return `gcd(x,0)=x` when we have reached the *last* integer di
 
 1. Complete the model code above, by replacing the `?`s, to obtain a working function `mygcd`. Test that it is working correctly on small arguments. Compare its output with `sp.gcd` for some large arguments.
 
+2. What other checks/cases should you use like the `if b==0` one, in order for your function to work with all valid inputs? How should your function treat any negative arguments?
+
 2. Write another version that does not rely on function recursion. You can do this with a suitable `while` loop for instance. 
 
 ### Q2 Implementing the extended Euclidean algorithm
 
-Sympy has an implmentation of the Extended Euclidan algorithm `sp.gcdex`
+Sympy has an implementation of the Extended Euclidean algorithm `sp.gcdex`
 
     sp.gcdex(a,b)
 
@@ -83,15 +85,16 @@ Let's write our own implementation of this using, again using the recursion prin
 1. Replace the `?`s in the code above to obtain a working version of `mygcdex`. You'll have to think very carefully about how to define `newx` and `newy`. Pen and paper may be needed to figure it out.
 2. Test it on some small arguments to ensure it's working correctly. 
 3. Test it on some large arguments and ensure it's working correctly. 
+4. Does the function work with (some or all) negative arguments? Adapt it so it does.
 4. Compare its output with `sp.gcdex`.
 
 ### Q3 Investigating multiplicative inverses
 
-Sympy has the function `sp.mod_inverse` for computing multiplicative modular inverses. `sp.mod_inverse(a,n)` returns the mutplicative inverse of `a` modulo `n`.
+Sympy has the function `sp.mod_inverse` for computing multiplicative modular inverses. `sp.mod_inverse(a,n)` returns the multiplicative inverse of `a` modulo `n`.
 
 **Task**
 
-1. Experiment with `sp.mod_inverse` to familiarise yourself with it and its output. 
+1. Experiment with `sp.mod_inverse` to familiarize yourself with it and its output. 
 2. Write your own function `mymod_inverse` that uses the output of `mygcdex` or `sp.gcdex` to calculate multiplicative inverses. 
 3. It should raise an error, or at least print some output, to indicate when the inverse does not exist.
 4. Like before, test it and compare its output with `sp.mod_inverse`.
