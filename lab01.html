@@ -11,8 +11,76 @@
 <li>Start the <code>Anacaonda Navigator</code> software from the Start menu.</li>
 <li>Launch a <code>Jupyter server</code> and Python 3 notebook.</li>
 </ul>
-<p>The <a href="https://www.sympy.org/en/index.html">Sympy</a> library is a Python library for symbolic mathematics and provides some commands we will make use of.</p>
-<pre><code>    import sympy as sp
-    </code></pre>
+<p>The <a href="https://www.sympy.org/en/index.html">Sympy</a> library is a Python library for symbolic mathematics and provides some commands we will make use of. You can read more about Sympy and consult the documentation at the above link.</p>
+<pre><code>import sympy as sp</code></pre>
 <p>Sympy has an inbuilt <code>gcd</code> command</p>
-<pre><code>    sp.gcd(10,8)</code></pre>
+<pre><code>sp.gcd(10,8)</code></pre>
+<h3 id="q1.-implementing-the-euclidean-algorithm">Q1. Implementing the Euclidean algorithm</h3>
+<p>Let’s write our own implementation of the Euclidean algorithm. There are a few ways to approach this. One way is to use the principle of <em>recursion</em> and exploit the relationship that</p>
+<pre><code>gcd(a,n) = gcd(n,r)</code></pre>
+<p>whenever</p>
+<pre><code>a = qn + r. </code></pre>
+<p>So we could write our python function using the structure</p>
+<pre><code>def mygcd(a,b):
+    if b==0:
+        return a
+    else:
+        q = ?
+        r = ?
+        return mygcd(b,r)</code></pre>
+<p>Note the check to return <code>gcd(x,0)=x</code> when we have reached the <em>last</em> integer division. Note the use of recursion where we basically define the <code>mygcd</code> function by returing another call to <code>mygcd</code>.</p>
+<p><strong>Task</strong></p>
+<ol type="1">
+<li><p>Complete the model code above, by replacing the <code>?</code>s, to obtain a working function <code>mygcd</code>. Test that it is working correctly on small arguments. Compare its output with <code>sp.gcd</code> for some large arguments.</p></li>
+<li><p>Write another version that does not rely on function recursion. You can do this with a suitable <code>while</code> loop for instance.</p></li>
+</ol>
+<h3 id="q2-implementing-the-extended-euclidean-algorithm">Q2 Implementing the extended Euclidean algorithm</h3>
+<p>Sympy has an implmentation of the Extended Euclidan algorithm <code>sp.gcdex</code></p>
+<pre><code>sp.gcdex(a,b)</code></pre>
+<p>will return a 3-tuple (x,y,d) satisfying</p>
+<ul>
+<li><code>gcd(a,b) = d</code></li>
+<li><code>d = ax + by</code></li>
+</ul>
+<p>Let’s write our own implementation of this using, again using the recursion principle, with the structure</p>
+<pre><code>def mygcdex(a,b):
+    if b==0:
+        return (?,?,a)
+    else:
+        q = ?
+        r = ?
+        (x,y,d) = mygcdex(?,?)
+        newx = ?
+        newy = ?
+        return (newx,newy,d)</code></pre>
+<p><strong>Task</strong></p>
+<ol type="1">
+<li>Replace the <code>?</code>s in the code above to obtain a working version of <code>mygcdex</code>. You’ll have to think very carefully about how to define <code>newx</code> and <code>newy</code>. Pen and paper may be needed to figure it out.</li>
+<li>Test it on some small arguments to ensure it’s working correctly.</li>
+<li>Test it on some large arguments and ensure it’s working correctly.</li>
+<li>Compare its output with <code>sp.gcdex</code>.</li>
+</ol>
+<h3 id="q3-investigating-multiplicative-inverses">Q3 Investigating multiplicative inverses</h3>
+<p>Sympy has the function <code>sp.mod_inverse</code> for computing multiplicative modular inverses. <code>sp.mod_inverse(a,n)</code> returns the mutplicative inverse of <code>a</code> modulo <code>n</code>.</p>
+<p><strong>Task</strong></p>
+<ol type="1">
+<li>Experiment with <code>sp.mod_inverse</code> to familiarise yourself with it and its output.</li>
+<li>Write your own function <code>mymod_inverse</code> that uses the output of <code>mygcdex</code> or <code>sp.gcdex</code> to calculate multiplicative inverses.</li>
+<li>It should raise an error, or at least print some output, to indicate when the inverse does not exist.</li>
+<li>Like before, test it and compare its output with <code>sp.mod_inverse</code>.</li>
+<li>Use <code>mymod_inverse</code> to replicate the table of inverses modulo 8, shown on page 55 of Stallings.</li>
+</ol>
+<h3 id="q4-further-investigation-of-multiplicative-inverses">Q4 Further investigation of multiplicative inverses</h3>
+<ol type="1">
+<li>Go further, and tabulate inverses for elements of <span class="math inline"><em>Z</em><sub><em>n</em></sub></span> for a range of moduli <span class="math inline"><em>n</em></span>.</li>
+<li>For the moduli <span class="math inline"><em>n</em> = 3, 5, 7, 11, 13, 17, …</span> what do you notice about the existence of multiplicative inverses. Why does it behave like this?</li>
+</ol>
+<h3 id="working-with-the-problems-in-chapter-2-of-stallings.">Working with the problems in Chapter 2 of Stallings.</h3>
+<p>Each chapter of Stallings ends with a collection of problems that will help to consolidate and further your understanding of the topics. Suggested problems from Chapter 2 are</p>
+<ul>
+<li>2.3</li>
+<li>2.11</li>
+<li>2.12</li>
+<li>Problems 2.13, 2.14 and 2.15 carry out further investigation of Euclid’s algorithm and an alternative algorithm for computing <code>gcd</code>.</li>
+<li>2.16</li>
+</ul>
