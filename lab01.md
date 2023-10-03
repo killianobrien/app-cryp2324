@@ -14,15 +14,15 @@ We will work with the language Python in a Jupyter notebook since this allows us
 * Launch a `Jupyter server` and Python 3 notebook.
 
 The [Sympy](https://www.sympy.org/en/index.html) library is a Python library for symbolic mathematics and provides some commands we will make use of. You can read more about Sympy and consult the documentation at the above link.
-
+```{style="background-color:SteelBlue;color:White;"}
     import sympy as sp
-
+```
 
 
 Sympy has an inbuilt `gcd` command
-
+```{style="background-color:SteelBlue;color:White;"}
     sp.gcd(10,8)
-
+```
 
 ### Q1. Implementing the Euclidean algorithm
 
@@ -37,7 +37,7 @@ whenever
 
 
 So we could write our python function using the structure
-
+```{style="background-color:SteelBlue;color:White;"}
     def mygcd(a,b):
         if b==0:
             return a
@@ -45,7 +45,7 @@ So we could write our python function using the structure
             q = ?
             r = ?
             return mygcd(b,r)
-
+```
 Note the check to return `gcd(x,0)=x` when we have reached the *last* integer division. Note the use of recursion where we basically define the `mygcd` function by returing another call to `mygcd`.
 
 **Task**
@@ -68,7 +68,7 @@ will return a 3-tuple (x,y,d) satisfying
 * `d = ax + by`
 
 Let's write our own implementation of this using, again using the recursion principle, with the structure
-
+```{style="background-color:SteelBlue;color:White;"}
     def mygcdex(a,b):
         if b==0:
             return (?,?,a)
@@ -79,6 +79,7 @@ Let's write our own implementation of this using, again using the recursion prin
             newx = ?
             newy = ?
             return (newx,newy,d)
+```
 
 **Task**
 
@@ -114,4 +115,3 @@ Each chapter of Stallings ends with a collection of problems that will help to c
 * 2.12
 * Problems 2.13, 2.14 and 2.15 carry out further investigation of Euclid's algorithm and an alternative algorithm for computing `gcd`.
 * 2.16
-

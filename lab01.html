@@ -12,22 +12,22 @@
 <li>Launch a <code>Jupyter server</code> and Python 3 notebook.</li>
 </ul>
 <p>The <a href="https://www.sympy.org/en/index.html">Sympy</a> library is a Python library for symbolic mathematics and provides some commands we will make use of. You can read more about Sympy and consult the documentation at the above link.</p>
-<pre><code>import sympy as sp</code></pre>
+<pre style="background-color:SteelBlue;color:White;"><code>    import sympy as sp</code></pre>
 <p>Sympy has an inbuilt <code>gcd</code> command</p>
-<pre><code>sp.gcd(10,8)</code></pre>
+<pre style="background-color:SteelBlue;color:White;"><code>    sp.gcd(10,8)</code></pre>
 <h3 id="q1.-implementing-the-euclidean-algorithm">Q1. Implementing the Euclidean algorithm</h3>
 <p>Let’s write our own implementation of the Euclidean algorithm. There are a few ways to approach this. One way is to use the principle of <em>recursion</em> and exploit the relationship that</p>
 <pre><code>gcd(a,n) = gcd(n,r)</code></pre>
 <p>whenever</p>
 <pre><code>a = qn + r. </code></pre>
 <p>So we could write our python function using the structure</p>
-<pre><code>def mygcd(a,b):
-    if b==0:
-        return a
-    else:
-        q = ?
-        r = ?
-        return mygcd(b,r)</code></pre>
+<pre style="background-color:SteelBlue;color:White;"><code>    def mygcd(a,b):
+        if b==0:
+            return a
+        else:
+            q = ?
+            r = ?
+            return mygcd(b,r)</code></pre>
 <p>Note the check to return <code>gcd(x,0)=x</code> when we have reached the <em>last</em> integer division. Note the use of recursion where we basically define the <code>mygcd</code> function by returing another call to <code>mygcd</code>.</p>
 <p><strong>Task</strong></p>
 <ol type="1">
@@ -44,16 +44,16 @@
 <li><code>d = ax + by</code></li>
 </ul>
 <p>Let’s write our own implementation of this using, again using the recursion principle, with the structure</p>
-<pre><code>def mygcdex(a,b):
-    if b==0:
-        return (?,?,a)
-    else:
-        q = ?
-        r = ?
-        (x,y,d) = mygcdex(?,?)
-        newx = ?
-        newy = ?
-        return (newx,newy,d)</code></pre>
+<pre style="background-color:SteelBlue;color:White;"><code>    def mygcdex(a,b):
+        if b==0:
+            return (?,?,a)
+        else:
+            q = ?
+            r = ?
+            (x,y,d) = mygcdex(?,?)
+            newx = ?
+            newy = ?
+            return (newx,newy,d)</code></pre>
 <p><strong>Task</strong></p>
 <ol type="1">
 <li>Replace the <code>?</code>s in the code above to obtain a working version of <code>mygcdex</code>. You’ll have to think very carefully about how to define <code>newx</code> and <code>newy</code>. Pen and paper may be needed to figure it out.</li>
@@ -63,10 +63,10 @@
 <li>Compare its output with <code>sp.gcdex</code>.</li>
 </ol>
 <h3 id="q3-investigating-multiplicative-inverses">Q3 Investigating multiplicative inverses</h3>
-<p>Sympy has the function <code>sp.mod_inverse</code> for computing multiplicative modular inverses. <code>sp.mod_inverse(a,n)</code> returns the mutplicative inverse of <code>a</code> modulo <code>n</code>.</p>
+<p>Sympy has the function <code>sp.mod_inverse</code> for computing multiplicative modular inverses. <code>sp.mod_inverse(a,n)</code> returns the multiplicative inverse of <code>a</code> modulo <code>n</code>.</p>
 <p><strong>Task</strong></p>
 <ol type="1">
-<li>Experiment with <code>sp.mod_inverse</code> to familiarise yourself with it and its output.</li>
+<li>Experiment with <code>sp.mod_inverse</code> to familiarize yourself with it and its output.</li>
 <li>Write your own function <code>mymod_inverse</code> that uses the output of <code>mygcdex</code> or <code>sp.gcdex</code> to calculate multiplicative inverses.</li>
 <li>It should raise an error, or at least print some output, to indicate when the inverse does not exist.</li>
 <li>Like before, test it and compare its output with <code>sp.mod_inverse</code>.</li>
