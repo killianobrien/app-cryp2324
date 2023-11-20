@@ -14281,22 +14281,22 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h3><p><strong>RSA</strong> Questions 1 &mdash; 4 are about the RSA cryptosystem.</p>
-<ol>
-<li>Let $p$ be the smallest prime satisfying $p \geq n$ and let $q$ be the smallest prime satisfying $q \geq (n+10^6)$. Let $m$ denote the product $m = p \cdot q$. Determine the values <code>p,q,m</code> with the help of Sympy's <code>nextprime</code> function.</li>
-<li>Your public key is the pair $(a,m)$. Determine your corresponding private key pair $(d,m)$. Store the relevant value in the variable <code>d</code>.</li>
-<li>Use your public key to encrypt the message represented by your number $b$. Store the encrypted value in the variable <code>M</code>.</li>
-<li>Finally, decrypt the encrypted message $M$ with the use of your private key and confirm that the plaintext message $b$ is recovered. </li>
-</ol>
+<ul>
+<li><strong>Q1</strong> Let $p$ be the smallest prime satisfying $p \geq n$ and let $q$ be the smallest prime satisfying $q \geq (n+10^6)$. Let $m$ denote the product $m = p \cdot q$. Determine the values <code>p,q,m</code> with the help of Sympy's <code>nextprime</code> function.</li>
+<li><strong>Q2</strong> Your public key is the pair $(a,m)$. Determine your corresponding private key pair $(d,m)$. Store the relevant value in the variable <code>d</code>.</li>
+<li><strong>Q3</strong> Use your public key to encrypt the message represented by your number $b$. Store the encrypted value in the variable <code>M</code>.</li>
+<li><strong>Q4</strong> Finally, decrypt the encrypted message $M$ with the use of your private key and confirm that the plaintext message $b$ is recovered. </li>
+</ul>
 <p><strong>Diffie-Hellman key exchange</strong> Questions 5 &mdash; 7 concern the Diffie-Hellman key exchange protocol.</p>
-<ol>
-<li>Let $p$ be defined as in Q1, i.e. the smallest prime satisfying $p \geq n$. Determine the smallest positive integer $\alpha$ such that $\alpha$ is a primitive root modulo $p$. Store this in a variable <code>alpha</code>.</li>
-<li>Alice and Bob agree to a Diffie-Hellman key exchange using the prime $p$ and primitive root $\alpha$. Alice's private key is $X_A = a$ and Bob's private key is $X_B = b$. Determine the public keys $Y_A$ and $Y_B$ exchanged by Alice and Bob. Store these in variables <code>YA</code> and <code>YB</code>.</li>
-<li>Determine the shared secret key $K$ that Alice and Bob can compute. Store this in a variable <code>K</code>.</li>
-</ol>
+<ul>
+<li><strong>Q5</strong> Let $p$ be defined as in Q1, i.e. the smallest prime satisfying $p \geq n$. Determine the smallest positive integer $\alpha$ such that $\alpha$ is a primitive root modulo $p$. Store this in a variable <code>alpha</code>.</li>
+<li><strong>Q6</strong> Alice and Bob agree to a Diffie-Hellman key exchange using the prime $p$ and primitive root $\alpha$. Alice's private key is $X_A = a$ and Bob's private key is $X_B = b$. Determine the public keys $Y_A$ and $Y_B$ exchanged by Alice and Bob. Store these in variables <code>YA</code> and <code>YB</code>.</li>
+<li><strong>Q7</strong> Determine the shared secret key $K$ that Alice and Bob can compute. Store this in a variable <code>K</code>.</li>
+</ul>
 <p><strong>Miller-Rabin primality test</strong> This question is based on the Miller-Rabin probabilistic primality test. You will need to read about this test in section 2.6 of chapter 2 of the Stallings textbook.</p>
-<ol>
-<li>Let $p$ be defined as in Q1, i.e. the smallest prime satisfying $p \geq n$. Confirm that $p$ passes the Miller-Rabin test by carrying out the necessary computations to confirm the expected value(s) modulo $p$ of the exponential(s) with base $a$. </li>
-</ol>
+<ul>
+<li><strong>Q8</strong> Let $p$ be defined as in Q1, i.e. the smallest prime satisfying $p \geq n$. Confirm that $p$ passes the Miller-Rabin test by carrying out the necessary computations to confirm the expected value(s) modulo $p$ of the exponential(s) with base $a$. </li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
